@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vision-light-robustness"
+version = "0.1.0"
+description = "Evaluate image-level detector robustness across lighting conditions"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+augment = ["Pillow>=10"]
+
+[project.scripts]
+vision-light-robustness = "vision_stress_lab.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["vision_stress_lab*"]
+
