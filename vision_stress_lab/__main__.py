@@ -20,7 +20,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "summary.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     with (out_dir / "condition_metrics.csv").open("w", newline="", encoding="utf-8") as handle:
-        columns = ["condition", "images", "target_images", "true_positives", "false_positives", "false_negatives", "recall", "precision", "false_positive_rate", "mean_confidence"]
+        columns = ["condition", "images", "target_images", "true_positives", "false_positives", "false_negatives", "true_negatives", "recall", "precision", "false_positive_rate", "mean_confidence", "median_illuminance_lux"]
         writer = csv.DictWriter(handle, fieldnames=columns)
         writer.writeheader()
         writer.writerows(report["conditions"])
